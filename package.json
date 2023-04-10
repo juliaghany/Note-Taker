@@ -10,5 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliaghany/challenge-11.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/juliaghany/challenge-11/issues"
+  },
+  "homepage": "https://github.com/juliaghany/challenge-11#readme",
+  "devDependencies": {}
 }
