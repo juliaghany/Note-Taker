@@ -5,3 +5,5 @@
 ## Usage
 
 ## Credits
+
+<!-- https://www.npmjs.com/package/uniqid -->
