@@ -4,6 +4,9 @@
 
 URL to functional, deployed action: https://gentle-harbor-66390.herokuapp.com/
 
+![Alt text](images/homepage.png)
+![Alt text](images/notesPage.png)
+
 ## Description 
 
 My motivation for this project was to learn how to create an application that can be used to write and save notes, as well as uses an Express.js back end that will save and retrieve note data from a JSON file. 
