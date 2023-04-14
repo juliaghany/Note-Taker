@@ -1,6 +1,6 @@
 // import required modules
 
-const fb = require('express').Router();
+const api = require('express').Router();
 const fs = require('fs/promises');
 const uniqid = require('uniqid');
 
@@ -13,13 +13,13 @@ async function readData() {
 
 // GET route that reads the db.json file and returns all saved notes as JSON
 
-fb.get('/notes', async (req, res) => {
+api.get('/notes', async (req, res) => {
     res.json(await readData())
 });
 
 // POST route that receives a new note to save on the request body, adds it to the db.json file, and returns the new note to the client
 
-fb.post('/notes', async (req, res) => {
+api.post('/notes', async (req, res) => {
     const { title, text } = req.body
 
     if (title && text) {
@@ -40,14 +40,13 @@ fb.post('/notes', async (req, res) => {
 
 // DELETE route that reads notes from db.json file, filters out notes with specified ID, writes updated notes back to the file
 
-fb.delete('/notes/:id', async (req, res) => {
+api.delete('/notes/:id', async (req, res) => {
     var currentNotes = await readData()
     var newNotes = currentNotes.filter(notes => notes.id != req.params.id)
-    console.log(newNotes)
     await fs.writeFile("./db/db.json", JSON.stringify(newNotes))
     res.status(200).json({ message: "notes successfully deleted" })
 });
 
 // exports fb
 
-module.exports = fb;
+module.exports = api;
